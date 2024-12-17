@@ -1,0 +1,88 @@
+/* Centrage de la page */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Animation des blocs existants */
+.boc1 {
+  background-color: #b10000;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+  animation: aubin1 400ms ease-out infinite;
+}
+
+@keyframes aubin1 {
+  0% {
+    transform: rotate(10deg);
+    background-color: rgb(16, 19, 17);
+  }
+  100% {
+    transform: rotate(360deg);
+    background-color: rgb(244, 2, 147);
+  }
+}
+
+.boc {
+  position: absolute;
+  z-index: 2;
+  width: 80px;
+  height: 80px;
+  background-color: black;
+  animation: aubin 2s infinite;
+}
+
+@keyframes aubin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stylisation du texte "Bienvenue" */
+.title {
+  font-family: "Poppins", sans-serif; /* Police moderne */
+  font-size: 30px; /* Taille de la police */
+  color: #000000; /* Couleur assortie aux blocs */
+  text-transform: uppercase; /* Mettre en majuscules */
+  letter-spacing: 4px; /* Espacement des lettres */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Effet d'ombre */
+  margin-bottom: -150px; /* Espacement avec les blocs */
+  z-index: 3; /* S'assurer que le texte est visible */
+}
+
+img {
+  position: relative;
+  top: 2px;
+  padding-left: 5px;
+  justify-content: center;
+  align-items: center;
+  /* float: right; */
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 1rem; /* Réduction de la taille */
+    letter-spacing: 1px; /* Espacement réduit */
+    margin-bottom: -112px; /* Ajuster l'espacement */
+    text-align: center; /* Centrage horizontal */
+  }
+
+  .boc,
+  .boc1 {
+    width: 50px; /* Réduction de la taille des blocs */
+    height: 50px;
+  }
+
+  .container {
+    height: 100vh; /* Toujours prendre la hauteur totale */
+  }
+}
